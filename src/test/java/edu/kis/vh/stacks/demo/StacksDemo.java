@@ -44,6 +44,10 @@ class StacksDemo {
             System.out.println();
         }
 
+        /**
+         * Kombinacja klawiszy shift+alt+'strzałki kierunkowe' powodują dodanie
+         * wcięcia lub jego usunięcie
+         */
         System.out.println("total rejected is "
                 + ((StackHanoi) stacks[3]).reportRejected()
         );
