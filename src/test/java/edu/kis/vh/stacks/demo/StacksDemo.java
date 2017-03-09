@@ -1,7 +1,7 @@
 package edu.kis.vh.stacks.demo;
 
 import edu.kis.vh.stacks.StackHanoi;
-import edu.kis.vh.stacks.stack;
+import edu.kis.vh.stacks.Stack;
 import edu.kis.vh.stacks.factory.DefaultStacksFactory;
 
 class StacksDemo {
@@ -15,11 +15,11 @@ class StacksDemo {
 
         DefaultStacksFactory factory = new DefaultStacksFactory();
         //uporządkowanie wszystkich elementów tablicy w jednej kolumnie
-        stack[] stacks = {
-            factory.GetStandardStack(),
-            factory.GetFalseStack(),
-            factory.GetFIFOStack(),
-            factory.GetHanoiStack()
+        Stack[] stacks = {
+            factory.getStandardStack(),
+            factory.getFalseStack(),
+            factory.getFIFOStack(),
+            factory.getHanoiStack()
         };
 
         for (int i = 1; i < 15; i++) {
@@ -28,9 +28,9 @@ class StacksDemo {
             }
         }
 
-        java.util.Random rn = new java.util.Random();
+        java.util.Random random = new java.util.Random();
         for (int i = 1; i < 15; i++) {
-            stacks[3].push(rn.nextInt(20));
+            stacks[3].push(random.nextInt(20));
         }
 
         for (int i = 0; i < stacks.length; i++) {
