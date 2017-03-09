@@ -7,24 +7,24 @@ import edu.kis.vh.stacks.StackHanoi;
 
 public class DefaultStacksFactory implements IstacksFactory {
 
-	@Override
-	public stack GetStandardStack() {
-		return new stack();
-	}
+    @Override
+    public stack GetStandardStack() {
+        return new stack();
+    }
 
-	@Override
-	public stack GetFalseStack() {
-		return new stack();
-	}
+    @Override
+    public stack GetFalseStack() {
+        return new stack();
+    }
 
-	@Override
-	public StackFIFO GetFIFOStack() {
-		return new StackFIFO();
-	}
+    @Override
+    public StackFIFO GetFIFOStack() {
+        return new StackFIFO();
+    }
 
-	@Override
-	public StackHanoi GetHanoiStack() {
-		return new StackHanoi();
-	}
+    @Override
+    public StackHanoi GetHanoiStack() {
+        return new StackHanoi();
+    }
 
 }
