@@ -1,6 +1,6 @@
 package edu.kis.vh.stacks.demo;
 
-import edu.kis.vh.stacks.StackHanoi;
+import edu.kis.vh.stacks.HanoiStack;
 import edu.kis.vh.stacks.Stack;
 import edu.kis.vh.stacks.factory.DefaultStacksFactory;
 
@@ -49,7 +49,7 @@ class StacksDemo {
          * wcięcia lub jego usunięcie
          */
         System.out.println("total rejected is "
-                + ((StackHanoi) stacks[3]).reportRejected()
+                + ((HanoiStack) stacks[3]).reportRejected()
         );
 
     }

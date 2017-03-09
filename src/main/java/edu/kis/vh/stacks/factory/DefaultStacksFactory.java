@@ -2,7 +2,7 @@ package edu.kis.vh.stacks.factory;
 
 import edu.kis.vh.stacks.Stack;
 import edu.kis.vh.stacks.FifoStack;
-import edu.kis.vh.stacks.StackHanoi;
+import edu.kis.vh.stacks.HanoiStack;
 import edu.kis.vh.stacks.factory.IStacksFactory;
 
 public class DefaultStacksFactory implements IStacksFactory {
@@ -23,8 +23,8 @@ public class DefaultStacksFactory implements IStacksFactory {
     }
 
     @Override
-    public StackHanoi getHanoiStack() {
-        return new StackHanoi();
+    public HanoiStack getHanoiStack() {
+        return new HanoiStack();
     }
 
 }

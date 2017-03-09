@@ -2,8 +2,7 @@ package edu.kis.vh.stacks.list;
 
 public class StackList {
 
-    Node last;
-    int i;
+    private Node last;
     private final int stackEmpty = -1;
 
     public void pushElement(int i) {

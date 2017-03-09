@@ -2,7 +2,7 @@ package edu.kis.vh.stacks.factory;
 
 import edu.kis.vh.stacks.Stack;
 import edu.kis.vh.stacks.FifoStack;
-import edu.kis.vh.stacks.StackHanoi;
+import edu.kis.vh.stacks.HanoiStack;
 
 public interface IStacksFactory {
 
@@ -12,6 +12,6 @@ public interface IStacksFactory {
 
     public FifoStack getFIFOStack();
 
-    public StackHanoi getHanoiStack();
+    public HanoiStack getHanoiStack();
 
 }
