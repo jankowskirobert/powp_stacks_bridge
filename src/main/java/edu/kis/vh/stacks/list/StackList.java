@@ -10,7 +10,7 @@ public class StackList {
             last = new Node(i);
         } else {
             last.next = new Node(i);
-            last.next.prev = last;
+            last.next.previous = last;
             last = last.next;
         }
     }
@@ -35,7 +35,7 @@ public class StackList {
             return -1;
         }
         int ret = last.value;
-        last = last.prev;
+        last = last.previous;
         return ret;
     }
 
