@@ -1,6 +1,6 @@
 package edu.kis.vh.stacks;
 
-public class StackFIFO extends Stack {
+public class FifoStack extends Stack {
 
     public Stack stack = new Stack();
 
