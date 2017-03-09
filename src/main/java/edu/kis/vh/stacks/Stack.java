@@ -5,7 +5,7 @@ public class Stack {
     private final int stackSize = 12;
     private int[] items = new int[stackSize];
     private final int stackBegin = -1;
-    public int total = -1;
+    private int total = -1;
 
     public void push(int value) {
         if (!isFull()) {
