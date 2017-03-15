@@ -1,0 +1,8 @@
+[Stack], [HanoiStack], [FifoStack], [DefaultStacksFactory]
+[HanoiStack]-^[Stack], 
+[FifoStack]-^[Stack],
+[FifoStack]1++-*[Stack]
+[Stack]-[DefaultStacksFactory]
+[HanoiStack]-[DefaultStacksFactory], [FifoStack]-[DefaultStacksFactory]
+[StackList]1++-*[Node]
+[DefaultStacksFactory]-.-^[<<IStocksFactory>>]
