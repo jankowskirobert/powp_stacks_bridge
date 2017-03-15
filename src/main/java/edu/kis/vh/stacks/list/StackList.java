@@ -9,9 +9,9 @@ public class StackList {
         if (last == null) {
             last = new Node(i);
         } else {
-            last.next = new Node(i);
-            last.next.previous = last;
-            last = last.next;
+            last.setNext(new Node(i));
+            last.getNext().setPrevious(last);
+            last = last.getNext();
         }
     }
 
@@ -27,15 +27,15 @@ public class StackList {
         if (empty()) {
             return stackEmpty;
         }
-        return last.value;
+        return last.getValue();
     }
 
     public int pop() {
         if (empty()) {
             return stackEmpty;
         }
-        int ret = last.value;
-        last = last.previous;
+        int ret = last.getValue();
+        last = last.getPrevious();
         return ret;
     }
 
