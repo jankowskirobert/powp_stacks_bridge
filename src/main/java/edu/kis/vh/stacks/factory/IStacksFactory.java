@@ -4,14 +4,30 @@ import edu.kis.vh.stacks.Stack;
 import edu.kis.vh.stacks.FifoStack;
 import edu.kis.vh.stacks.HanoiStack;
 
+/**
+ * @author jankowskirobert
+ *
+ */
 public interface IStacksFactory {
 
-    public Stack getStandardStack();
+	/**
+	 * @return standardowy stos
+	 */
+	public Stack getStandardStack();
 
-    public Stack getFalseStack();
+	/**
+	 * @return falszywy stos
+	 */
+	public Stack getFalseStack();
 
-    public FifoStack getFIFOStack();
+	/**
+	 * @return stos typu first-in-first-out
+	 */
+	public FifoStack getFIFOStack();
 
-    public HanoiStack getHanoiStack();
+	/**
+	 * @return stos typu hanoi
+	 */
+	public HanoiStack getHanoiStack();
 
 }

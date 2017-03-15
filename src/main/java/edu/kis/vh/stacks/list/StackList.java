@@ -1,75 +1,120 @@
 package edu.kis.vh.stacks.list;
 
+/**
+ * Klasa pozwalajaca zaimplementowac liste ktora wraz z dodawaniem kolejnych
+ * wartosci rosnie dynamicznie.
+ * 
+ * @author jankowskirobert
+ *
+ */
 public class StackList {
 
-    private Node last;
-    private final int stackEmpty = -1;
+	private Node last;
+	private final int stackEmpty = -1;
 
-    public void pushElement(int i) {
-        if (last == null) {
-            last = new Node(i);
-        } else {
-            last.setNext(new Node(i));
-            last.getNext().setPrevious(last);
-            last = last.getNext();
-        }
-    }
+	/**
+	 * Dodaje wartosc <em>i</em> do listy i tworzy nowe dowiazanie
+	 * 
+	 * @param i
+	 *            - wartosc dowiazania
+	 */
+	public void pushElement(int i) {
+		if (last == null) {
+			last = new Node(i);
+		} else {
+			last.setNext(new Node(i));
+			last.getNext().setPrevious(last);
+			last = last.getNext();
+		}
+	}
 
-    public boolean empty() {
-        return last == null;
-    }
+	/**
+	 * Czy lista jest pusta?
+	 * 
+	 * @return true - jezeli ostatni element jest <em>null</em>; w innym
+	 *         przypadku false
+	 * 
+	 */
+	public boolean empty() {
+		return last == null;
+	}
 
-    public boolean full() {
-        return false;
-    }
+	/**
+	 * Czy lista jest pelna?
+	 * 
+	 * @return true bo lista rosnie dynamicznie TODO: jesli nigdy nie jest pelny
+	 *         to metoda jest nie potrzebna i mozna ja usunac
+	 */
+	public boolean full() {
+		return false;
+	}
 
-    public int peek() {
-        if (empty()) {
-            return stackEmpty;
-        }
-        return last.getValue();
-    }
+	/**
+	 * Pobierz element ale nie usuwaj dowiazania
+	 * 
+	 * @return wartosc ostatniego elementu; jesli lista jest pusta to zwraca -1
+	 * 
+	 */
+	public int peek() {
+		if (empty()) {
+			return stackEmpty;
+		}
+		return last.getValue();
+	}
 
-    public int pop() {
-        if (empty()) {
-            return stackEmpty;
-        }
-        int ret = last.getValue();
-        last = last.getPrevious();
-        return ret;
-    }
-    
-    class Node {
+	/**
+	 * Pobierz element i usun dowiazanie
+	 * 
+	 * @return wartosc ostatniego elementu; jesli lista jest pusta to zwraca -1
+	 */
+	public int pop() {
+		if (empty()) {
+			return stackEmpty;
+		}
+		int ret = last.getValue();
+		last = last.getPrevious();
+		return ret;
+	}
 
-    	// utworzone zostalo pole klasy Node oraz przy wkladaniu elementu do list
-    	// tworzona jest jej instancja jesli pole nie jest zainicjalizowane
-    	// dostep do poprzedniego i nastepnego pola realizowany jest przez gettery
-    	private final int value;
-    	private Node previous;
-    	private Node next;
+	/**
+	 * Element roboczy list, reprezentujacy wezel
+	 * 
+	 * @author jankowskirobert
+	 *
+	 */
+	class Node {
 
-    	public Node(int i) {
-    		value = i;
-    	}
+		// utworzone zostalo pole klasy Node oraz przy wkladaniu elementu do
+		// list
+		// tworzona jest jej instancja jesli pole nie jest zainicjalizowane
+		// dostep do poprzedniego i nastepnego pola realizowany jest przez
+		// gettery
+		private final int value;
+		private Node previous;
+		private Node next;
 
-    	int getValue() {
-    		return value;
-    	}
+		public Node(int i) {
+			value = i;
+		}
 
-    	Node getNext() {
-    		return next;
-    	}
+		int getValue() {
+			return value;
+		}
 
-    	void setNext(Node next) {
-    		this.next = next;
-    	}
+		Node getNext() {
+			return next;
+		}
 
-    	Node getPrevious() {
-    		return previous;
-    	}
+		void setNext(Node next) {
+			this.next = next;
+		}
 
-    	void setPrevious(Node previous) {
-    		this.previous = previous;
-    	}
-    }
+		Node getPrevious() {
+			return previous;
+		}
+
+		void setPrevious(Node previous) {
+			this.previous = previous;
+		}
+	}
 }
