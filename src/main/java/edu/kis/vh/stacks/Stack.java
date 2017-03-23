@@ -8,13 +8,13 @@ import edu.kis.vh.stacks.list.StackList;
  */
 public class Stack implements StackDefault {
 
-	private StackList stack;
+	private StackDefault stack;
 
 	public Stack() {
 		this.stack = new StackList();
 	}
 
-	public Stack(StackList stack) {
+	public Stack(StackDefault stack) {
 		this.stack = stack;
 	}
 	@Override
