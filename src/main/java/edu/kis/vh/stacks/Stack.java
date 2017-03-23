@@ -1,44 +1,43 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.list.StackList;
+
 /**
  * @author jankowskirobert
  *
  */
 public class Stack implements IStack {
 
-	private StackArray stackArray;
+	private StackList stack;
 
 	public Stack() {
-		this.stackArray = new StackArray();
+		this.stack = new StackList();
 	}
 
-	public Stack(StackArray stackArray) {
-		this.stackArray = stackArray;
+	public Stack(StackList stackArray) {
+		this.stack = stackArray;
 	}
 
 	public void push(int value) {
-		stackArray.push(value);
+		stack.pushElement(value);
 	}
 
 	public boolean isEmpty() {
-		return stackArray.isEmpty();
+		return stack.empty();
 	}
 
 	public boolean isFull() {
-		return stackArray.isFull();
+		return stack.full();
 	}
 
 	public int top() {
-		return stackArray.top();
+		return stack.peek();
 	}
 
 	public int pop() {
-		return stackArray.pop();
+		return stack.pop();
 	}
 
-	public int getTotal() {
-		return stackArray.getTotal();
-	}
 
 
 }

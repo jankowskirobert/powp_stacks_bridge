@@ -6,5 +6,4 @@ public interface IStack {
 	public boolean isFull();
 	public int top();
 	public int pop();
-	public int getTotal();
 }
