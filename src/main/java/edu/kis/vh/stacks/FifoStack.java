@@ -6,6 +6,14 @@ package edu.kis.vh.stacks;
  */
 public class FifoStack extends Stack {
 
+	public FifoStack() {
+		super();
+	}
+
+	public FifoStack(IStack stack) {
+		super(stack);
+	}
+
 	private final Stack stack = new Stack();
 
 	@Override
