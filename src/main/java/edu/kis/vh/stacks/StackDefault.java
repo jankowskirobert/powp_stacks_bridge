@@ -1,6 +1,6 @@
 package edu.kis.vh.stacks;
 
-public interface IStack {
+public interface StackDefault {
 	public void push(int value);
 	public boolean isEmpty();
 	public boolean isFull();

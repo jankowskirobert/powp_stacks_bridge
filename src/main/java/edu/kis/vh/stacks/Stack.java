@@ -6,7 +6,7 @@ import edu.kis.vh.stacks.list.StackList;
  * @author jankowskirobert
  *
  */
-public class Stack implements IStack {
+public class Stack implements StackDefault {
 
 	private StackList stack;
 
@@ -14,26 +14,26 @@ public class Stack implements IStack {
 		this.stack = new StackList();
 	}
 
-	public Stack(StackList stackArray) {
-		this.stack = stackArray;
+	public Stack(StackList stack) {
+		this.stack = stack;
 	}
-
+	@Override
 	public void push(int value) {
-		stack.pushElement(value);
+		stack.push(value);
 	}
-
+	@Override
 	public boolean isEmpty() {
-		return stack.empty();
+		return stack.isEmpty();
 	}
-
+	@Override
 	public boolean isFull() {
-		return stack.full();
+		return stack.isFull();
 	}
-
+	@Override
 	public int top() {
-		return stack.peek();
+		return stack.top();
 	}
-
+	@Override
 	public int pop() {
 		return stack.pop();
 	}

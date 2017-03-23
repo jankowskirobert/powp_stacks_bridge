@@ -4,7 +4,7 @@ package edu.kis.vh.stacks;
  * @author jankowskirobert
  *
  */
-public class StackArray {
+public class StackArray implements StackDefault {
 
 	private final int stackSize = 12;
 	private final int[] items = new int[stackSize];
@@ -17,6 +17,7 @@ public class StackArray {
 	 * @param value
 	 *            wartosc ktora ma byc wlozona na stos
 	 */
+	@Override
 	public void push(int value) {
 		if (!isFull()) {
 			items[++total] = value;
@@ -28,6 +29,7 @@ public class StackArray {
 	 * 
 	 * @return jesli stos jest pusty true; w przeciwnym razie false
 	 */
+	@Override
 	public boolean isEmpty() {
 		return total == stackBegin;
 	}
@@ -37,6 +39,7 @@ public class StackArray {
 	 * 
 	 * @return jesli stos jest pelny true; w przeciwnym razie false
 	 */
+	@Override
 	public boolean isFull() {
 		return total == stackSize - 1;
 	}
@@ -46,6 +49,7 @@ public class StackArray {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int top() {
 		if (isEmpty()) {
 			return stackBegin;
@@ -58,20 +62,12 @@ public class StackArray {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int pop() {
 		if (isEmpty()) {
 			return stackBegin;
 		}
 		return items[total--];
-	}
-
-	/**
-	 * Pobranie rozmiaru stosu
-	 * 
-	 * @return
-	 */
-	public int getTotal() {
-		return total;
 	}
 
 }

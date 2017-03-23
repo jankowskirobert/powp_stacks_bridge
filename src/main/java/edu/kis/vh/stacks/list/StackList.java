@@ -1,5 +1,8 @@
 package edu.kis.vh.stacks.list;
 
+
+import edu.kis.vh.stacks.StackDefault;
+
 /**
  * Klasa pozwalajaca zaimplementowac liste ktora wraz z dodawaniem kolejnych
  * wartosci rosnie dynamicznie.
@@ -7,7 +10,7 @@ package edu.kis.vh.stacks.list;
  * @author jankowskirobert
  *
  */
-public class StackList {
+public class StackList implements StackDefault{
 
 	private Node last;
 	private final int stackEmpty = -1;
@@ -18,7 +21,8 @@ public class StackList {
 	 * @param i
 	 *            - wartosc dowiazania
 	 */
-	public void pushElement(int i) {
+	@Override
+	public void push(int i) {
 		if (last == null) {
 			last = new Node(i);
 		} else {
@@ -35,7 +39,8 @@ public class StackList {
 	 *         przypadku false
 	 * 
 	 */
-	public boolean empty() {
+	@Override
+	public boolean isEmpty() {
 		return last == null;
 	}
 
@@ -45,7 +50,8 @@ public class StackList {
 	 * @return true bo lista rosnie dynamicznie TODO: jesli nigdy nie jest pelny
 	 *         to metoda jest nie potrzebna i mozna ja usunac
 	 */
-	public boolean full() {
+	@Override
+	public boolean isFull() {
 		return false;
 	}
 
@@ -55,8 +61,9 @@ public class StackList {
 	 * @return wartosc ostatniego elementu; jesli lista jest pusta to zwraca -1
 	 * 
 	 */
-	public int peek() {
-		if (empty()) {
+	@Override
+	public int top() {
+		if (isEmpty()) {
 			return stackEmpty;
 		}
 		return last.getValue();
@@ -67,8 +74,9 @@ public class StackList {
 	 * 
 	 * @return wartosc ostatniego elementu; jesli lista jest pusta to zwraca -1
 	 */
+	@Override
 	public int pop() {
-		if (empty()) {
+		if (isEmpty()) {
 			return stackEmpty;
 		}
 		int ret = last.getValue();
