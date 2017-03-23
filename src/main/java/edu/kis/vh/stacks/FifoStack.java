@@ -1,5 +1,6 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.types.*;
 /**
  * @author jankowskirobert
  *
@@ -14,7 +15,7 @@ public class FifoStack extends Stack {
 		super(stack);
 	}
 
-	private final Stack stack = new Stack();
+	private final StackList stack = new StackList();
 
 	@Override
 	public int pop() {

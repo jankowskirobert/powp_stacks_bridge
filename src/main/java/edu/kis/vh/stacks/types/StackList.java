@@ -26,8 +26,8 @@ public class StackList implements IStack{
 		if (last == null) {
 			last = new Node(i);
 		} else {
-			last.next.previous = last;
-			last = last.next;
+			last.setNext(new Node(i));
+			last.getNext().setPrevious(last);
 			last = last.getNext();
 		}
 	}
