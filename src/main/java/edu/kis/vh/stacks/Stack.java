@@ -4,74 +4,41 @@ package edu.kis.vh.stacks;
  * @author jankowskirobert
  *
  */
-public class Stack {
+public class Stack implements IStack {
 
-	private final int stackSize = 12;
-	private final int[] items = new int[stackSize];
-	private final int stackBegin = -1;
-	private int total = -1;
+	private StackArray stackArray;
 
-	/**
-	 * Wklada wartosc na stos
-	 * 
-	 * @param value
-	 *            wartosc ktora ma byc wlozona na stos
-	 */
+	public Stack() {
+		this.stackArray = new StackArray();
+	}
+
+	public Stack(StackArray stackArray) {
+		this.stackArray = stackArray;
+	}
+
 	public void push(int value) {
-		if (!isFull()) {
-			items[++total] = value;
-		}
+		stackArray.push(value);
 	}
 
-	/**
-	 * Czy stos jest pusty?
-	 * 
-	 * @return jesli stos jest pusty true; w przeciwnym razie false
-	 */
 	public boolean isEmpty() {
-		return total == stackBegin;
+		return stackArray.isEmpty();
 	}
 
-	/**
-	 * Czy stos jest pelny?
-	 * 
-	 * @return jesli stos jest pelny true; w przeciwnym razie false
-	 */
 	public boolean isFull() {
-		return total == stackSize - 1;
+		return stackArray.isFull();
 	}
 
-	/**
-	 * Pobranie wartosci z samej gory stosu
-	 * 
-	 * @return
-	 */
 	public int top() {
-		if (isEmpty()) {
-			return stackBegin;
-		}
-		return items[total];
+		return stackArray.top();
 	}
 
-	/**
-	 * Pobranie wartosci z samej gory stosu i usuniecie jej
-	 * 
-	 * @return
-	 */
 	public int pop() {
-		if (isEmpty()) {
-			return stackBegin;
-		}
-		return items[total--];
+		return stackArray.pop();
 	}
 
-	/**
-	 * Pobranie rozmiaru stosu
-	 * 
-	 * @return
-	 */
 	public int getTotal() {
-		return total;
+		return stackArray.getTotal();
 	}
+
 
 }
