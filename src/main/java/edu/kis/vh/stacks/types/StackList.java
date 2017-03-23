@@ -13,7 +13,7 @@ import edu.kis.vh.stacks.StackDefault;
 public class StackList implements StackDefault{
 
 	private Node last;
-	private final int stackEmpty = -1;
+	
 
 	/**
 	 * Dodaje wartosc <em>i</em> do listy i tworzy nowe dowiazanie
@@ -26,8 +26,8 @@ public class StackList implements StackDefault{
 		if (last == null) {
 			last = new Node(i);
 		} else {
-			last.setNext(new Node(i));
-			last.getNext().setPrevious(last);
+			last.next.previous = last;
+			last = last.next;
 			last = last.getNext();
 		}
 	}
@@ -64,7 +64,7 @@ public class StackList implements StackDefault{
 	@Override
 	public int top() {
 		if (isEmpty()) {
-			return stackEmpty;
+			return STACK_EMPTY;
 		}
 		return last.getValue();
 	}
@@ -77,7 +77,7 @@ public class StackList implements StackDefault{
 	@Override
 	public int pop() {
 		if (isEmpty()) {
-			return stackEmpty;
+			return STACK_EMPTY;
 		}
 		int ret = last.getValue();
 		last = last.getPrevious();

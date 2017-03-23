@@ -9,8 +9,7 @@ import edu.kis.vh.stacks.StackDefault;
 public class StackArray implements StackDefault {
 
 	private final int stackSize = 12;
-	private final int[] items = new int[stackSize];
-	private final int stackBegin = -1;
+	private final int[] items = new int[stackSize];	
 	private int total = -1;
 
 	/**
@@ -33,7 +32,7 @@ public class StackArray implements StackDefault {
 	 */
 	@Override
 	public boolean isEmpty() {
-		return total == stackBegin;
+		return total == STACK_EMPTY;
 	}
 
 	/**
@@ -54,7 +53,7 @@ public class StackArray implements StackDefault {
 	@Override
 	public int top() {
 		if (isEmpty()) {
-			return stackBegin;
+			return STACK_EMPTY;
 		}
 		return items[total];
 	}
@@ -67,7 +66,7 @@ public class StackArray implements StackDefault {
 	@Override
 	public int pop() {
 		if (isEmpty()) {
-			return stackBegin;
+			return STACK_EMPTY;
 		}
 		return items[total--];
 	}
