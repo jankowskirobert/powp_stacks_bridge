@@ -10,7 +10,7 @@ public class FifoTest {
 	@Test
 	public void testPop() {
 		FifoStack stack = new FifoStack();
-		Assert.assertEquals(stack.STACK_EMPTY, stack.pop());
+		Assert.assertEquals(0, stack.pop());
 	}
 	@Test
 	public void testPushAndPop() {
