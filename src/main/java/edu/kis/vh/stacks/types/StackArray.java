@@ -1,4 +1,6 @@
-package edu.kis.vh.stacks;
+package edu.kis.vh.stacks.types;
+
+import edu.kis.vh.stacks.StackDefault;
 
 /**
  * @author jankowskirobert
