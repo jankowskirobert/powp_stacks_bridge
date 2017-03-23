@@ -13,7 +13,7 @@ public class StackTest {
         int testValue = 4;
         stack.push(testValue);
 
-        int result = stack.top();
+        int result = stack.peek();
         Assert.assertEquals(testValue, result);
     }
 
@@ -48,15 +48,15 @@ public class StackTest {
         Stack stack = new Stack();
         final int EMPTY_STACK_VALUE = -1;
 
-        int result = stack.top();
+        int result = stack.peek();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
 
         int testValue = 4;
         stack.push(testValue);
 
-        result = stack.top();
+        result = stack.peek();
         Assert.assertEquals(testValue, result);
-        result = stack.top();
+        result = stack.peek();
         Assert.assertEquals(testValue, result);
     }
 

@@ -1,12 +1,12 @@
 package edu.kis.vh.stacks.types;
 
-import edu.kis.vh.stacks.StackDefault;
+import edu.kis.vh.stacks.IStack;
 
 /**
  * @author jankowskirobert
  *
  */
-public class StackArray implements StackDefault {
+public class StackArray implements IStack {
 
 	private final int stackSize = 12;
 	private final int[] items = new int[stackSize];	
@@ -51,7 +51,7 @@ public class StackArray implements StackDefault {
 	 * @return
 	 */
 	@Override
-	public int top() {
+	public int peek() {
 		if (isEmpty()) {
 			return STACK_EMPTY;
 		}

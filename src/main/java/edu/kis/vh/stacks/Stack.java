@@ -6,15 +6,15 @@ import edu.kis.vh.stacks.types.StackList;
  * @author jankowskirobert
  *
  */
-public class Stack implements StackDefault {
+public class Stack implements IStack {
 
-	private StackDefault stack;
+	private IStack stack;
 
 	public Stack() {
 		this.stack = new StackList();
 	}
 
-	public Stack(StackDefault stack) {
+	public Stack(IStack stack) {
 		this.stack = stack;
 	}
 	@Override
@@ -30,8 +30,8 @@ public class Stack implements StackDefault {
 		return stack.isFull();
 	}
 	@Override
-	public int top() {
-		return stack.top();
+	public int peek() {
+		return stack.peek();
 	}
 	@Override
 	public int pop() {

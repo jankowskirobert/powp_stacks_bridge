@@ -1,7 +1,7 @@
 package edu.kis.vh.stacks.types;
 
 
-import edu.kis.vh.stacks.StackDefault;
+import edu.kis.vh.stacks.IStack;
 
 /**
  * Klasa pozwalajaca zaimplementowac liste ktora wraz z dodawaniem kolejnych
@@ -10,7 +10,7 @@ import edu.kis.vh.stacks.StackDefault;
  * @author jankowskirobert
  *
  */
-public class StackList implements StackDefault{
+public class StackList implements IStack{
 
 	private Node last;
 	
@@ -62,7 +62,7 @@ public class StackList implements StackDefault{
 	 * 
 	 */
 	@Override
-	public int top() {
+	public int peek() {
 		if (isEmpty()) {
 			return STACK_EMPTY;
 		}

@@ -28,7 +28,7 @@ public class HanoiTest {
 		final int REJECTED = 0;
 		stack.push(Integer.MAX_VALUE);
 		Assert.assertEquals(REJECTED, stack.reportRejected());
-		Assert.assertEquals(Integer.MAX_VALUE, stack.top());
+		Assert.assertEquals(Integer.MAX_VALUE, stack.peek());
 		Assert.assertEquals(Integer.MAX_VALUE, stack.pop());
 	}
 	

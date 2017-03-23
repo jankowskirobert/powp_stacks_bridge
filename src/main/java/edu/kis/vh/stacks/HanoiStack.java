@@ -14,7 +14,7 @@ public class HanoiStack extends Stack {
 
 	@Override
 	public void push(int in) {
-		if (!isEmpty() && in > top()) {
+		if (!isEmpty() && in > peek()) {
 			totalRejected++;
 		} else {
 			super.push(in);

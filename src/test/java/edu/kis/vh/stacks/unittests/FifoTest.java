@@ -21,6 +21,6 @@ public class FifoTest {
 		stack.push(10);
 		stack.push(15);
 		Assert.assertEquals(5, stack.pop());
-		Assert.assertEquals(15, stack.top());
+		Assert.assertEquals(15, stack.peek());
 	}
 }
