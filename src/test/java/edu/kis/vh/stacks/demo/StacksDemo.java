@@ -2,22 +2,24 @@ package edu.kis.vh.stacks.demo;
 
 import edu.kis.vh.stacks.HanoiStack;
 import edu.kis.vh.stacks.Stack;
+import edu.kis.vh.stacks.factory.ArrayStackFactory;
 import edu.kis.vh.stacks.factory.DefaultStacksFactory;
+import edu.kis.vh.stacks.factory.IStacksFactory;
+import edu.kis.vh.stacks.factory.ListStackFactory;
 
 class StacksDemo {
 
-	/**
-	 * zbyt dużo tabulacji: były dwie powinna być jedna dla każdego wcięcia
-	 * które wystąpiło. Kolejno dodanie brakujących klamer dla bloków
-	 * decyzyjnych oraz pętli.
-	 */
 	public static void main(String[] args) {
 
 		DefaultStacksFactory factory = new DefaultStacksFactory();
 		testStacks(factory);
+		ListStackFactory listFactory = new ListStackFactory();
+		testStacks(listFactory);
+		ArrayStackFactory arrayFactory = new ArrayStackFactory();
+		testStacks(arrayFactory);
 	}
 
-	private static void testStacks(DefaultStacksFactory factory) {
+	private static void testStacks(IStacksFactory factory) {
 		Stack[] stacks = { factory.getStandardStack(), factory.getFalseStack(), factory.getFIFOStack(),
 				factory.getHanoiStack() };
 
@@ -36,17 +38,9 @@ class StacksDemo {
 			while (!stacks[i].isEmpty()) {
 				System.out.print(stacks[i].pop() + "  ");
 			}
-			/**
-			 * usunięcie tabulatora który mylnie wskazyważ, że ta linia jest
-			 * częścią pętli while
-			 */
 			System.out.println();
 		}
 
-		/**
-		 * Kombinacja klawiszy shift+alt+'strzałki kierunkowe' powodują dodanie
-		 * wcięcia lub jego usunięcie
-		 */
 		System.out.println("total rejected is " + ((HanoiStack) stacks[3]).reportRejected());
 	}
 

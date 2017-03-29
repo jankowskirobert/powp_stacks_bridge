@@ -10,7 +10,7 @@ public class StackArray implements IStack {
 
 	private final int stackSize = 12;
 	private final int[] items = new int[stackSize];	
-	private int total = -1;
+	private int total = STACK_EMPTY;
 
 	/**
 	 * Wklada wartosc na stos
